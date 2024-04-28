@@ -13,8 +13,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>address-service</name>
 	<description>address service</description>
+<!--	<properties>-->
+<!--		<java.version>17</java.version>-->
+<!--	</properties>-->
 	<properties>
-		<java.version>17</java.version>
+		<springfox.version>3.0.0</springfox.version>
+		<hibernate.validator.version>8.0.0.Final</hibernate.validator.version>
+		<spring.data.envers.version>3.0.0</spring.data.envers.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -39,6 +44,33 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+
+		<!--		dealing with feign connection and related errors capturing-->
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-core</artifactId>
+			<version>13.2.1</version>
+		</dependency>
+
+		<!--		Bean Validation API ( @NotNull, @Size, @Email, ....)-->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.validator.version}</version>
+		</dependency>
+
+		<!--		mapping one object model to another, automatically handling the conversion of fields with similar names and types-->
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>3.2.0</version>
 		</dependency>
 	</dependencies>
 
