@@ -20,7 +20,8 @@ public class AddressService {
     private final AddressRepository addressRepository;
     private final ModelMapper modelMapper;
     public static final String BAD_REQUEST = "Bad request";
-private final AddressConverter addressConverter;
+    private final AddressConverter addressConverter;
+
     public AddressResponseDto getAddressByEmployeeId(int id) {
         Address address = addressRepository.findAddressByEmployeeId(id);
         AddressResponseDto addressResponseDto = null;
